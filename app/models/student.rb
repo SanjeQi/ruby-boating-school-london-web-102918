@@ -22,6 +22,6 @@ attr_accessor :first_name
   end
 
   def self.find_student(first_name)
-    self
+     self.all.find {|student| student.first_name == first_name}
   end
 end
