@@ -1,14 +1,15 @@
+require 'pry'
+# require_relative 'boatingtest'
 
-require "pry"
 class Student
 
 attr_accessor :first_name
 
-
-@@all = []
+  @@all = []
 
   def initialize(first_name)
     @first_name = first_name
+    # @instructor = instructor
     @@all << self
   end
 
@@ -16,8 +17,11 @@ attr_accessor :first_name
     @@all
   end
 
+  def add_boating_test(test_name, test_status, instructor)
+    BoatingTest.new(self, test_name, test_status, instructor)
+  end
 
+  def self.find_student(first_name)
+    self
+  end
 end
-
-binding.pry
-puts eof
